@@ -1,0 +1,142 @@
+@charset "UTF-8";
+body {
+  background-image: url("../images/fondo.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  background-color: beige;
+  color: #666;
+  font-family: arial, verdana, sans-serif;
+}
+
+h1 {
+  color: #55A;
+  font-family: 2.8em;
+  font-size: 1.4em;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 12px;
+}
+
+table {
+  border: 3px solid;
+  border-collapse: collapse;
+  background-color: lightblue;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+table th {
+  border: 3px solid;
+  border-collapse: collapse;
+  background-color: lightblue;
+  color: #55A;
+  background-color: lightsalmon;
+}
+
+table td {
+  border: 3px solid;
+  border-collapse: collapse;
+  background-color: lightblue;
+  color: #666;
+}
+
+.titulo {
+  font-family: Arial;
+  font-size: 4.2em;
+  font-weight: bold;
+}
+
+div.destacado {
+  border: 1px solid #6B6;
+  padding: 10px 20px;
+  background-color: lightblue;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+div.destacado h1 {
+  border: 1px solid #6B6;
+  padding: 10px 20px;
+  background-color: lightblue;
+}
+
+div.destacado h1:hover {
+  color: #6B6;
+}
+
+div.destacado .textosuperespecial {
+  color: #6B6;
+}
+
+footer {
+  border: 1px solid #6B6;
+  padding: 10px 20px;
+  background-color: lightblue;
+  position: fixed;
+  left: 0px;
+  bottom: 5px;
+  width: 100%;
+}
+
+footer p {
+  font-size: 0.8em;
+}
+
+footer .letraPequeña {
+  font-size: 0.5em;
+}
+
+footer h1 {
+  font-size: 0.8em;
+}
+
+.lista {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.lista li {
+  font-size: 2.1em;
+}
+
+.tablaDatos th {
+  font-size: 2.1em;
+}
+
+.tablaDatos td {
+  font-size: 1.68em;
+}
+
+.buttonLink {
+  background-color: lightblue;
+  border: none;
+  color: #55A;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.span1 {
+  color: #55A;
+}
+
+.span2 {
+  color: orange;
+}
+
+.span3 {
+  color: #6B6;
+}
+
+.span4 {
+  color: pink;
+}

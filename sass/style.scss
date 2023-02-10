@@ -1,0 +1,182 @@
+//variables
+$color-primario: #55A;
+$color-secundario: #6B6;
+$color-texto: #666;
+
+$colores: $color-primario, orange,$color-secundario,pink;
+
+$espaciado-estandar: 10px;
+$espaciado-doble: 20px;
+
+$fuente-normal: 1em;
+$fuente-pequena: 0.8em;
+$fuente-grande: 1.4em;
+
+$tipografia-general: arial, verdana, sans-serif;
+$tipografia-alternativa: 'Times New Roman', Times, serif;
+
+//funciones
+@function tamañoExtragrande($escala) {
+    @return 1.4em*$escala;
+}
+
+@function tamañoExtrapequeño($escala) {
+    @return 1em/$escala;
+}
+
+//mixin
+@mixin crea-caja {
+    border: 1px solid $color-secundario;
+    padding: $espaciado-estandar $espaciado-doble;
+    background-color: lightblue;
+}
+
+@mixin bodyStyle {
+    text-align: center;
+    background-color: beige;
+}
+
+@mixin texto-de-titulo {
+    font-family: Arial;
+    font-size: tamañoExtragrande(3);
+    font-weight: bold;
+}
+
+@mixin tableStyle {
+    border: 3px solid;
+    border-collapse: collapse;
+    background-color: lightblue;
+}
+
+@mixin footerStyle {
+    border: 1px solid $color-secundario;
+    padding: $espaciado-estandar $espaciado-doble;
+    background-color: lightblue;
+    position: fixed;
+    left: 0px;
+    bottom: 5px;
+    width: 100%;
+}
+
+@mixin backgroundImage($rutaFoto){
+    background-image: url($rutaFoto);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    @include backgroundImage("../images/fondo.jpg");
+    @include bodyStyle();
+    color: $color-texto;
+    font-family: $tipografia-general;
+}
+
+h1 {
+    color: $color-primario;
+    font-family: tamañoExtragrande(2);
+    font-size: $fuente-grande;
+    padding: $espaciado-estandar;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+
+table {
+    @include tableStyle();
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    th {
+        @include tableStyle();
+        color: $color-primario;
+        background-color: lightsalmon
+    }
+
+    td {
+        @include tableStyle();
+        color: $color-texto
+    }
+}
+
+.titulo {
+    @include texto-de-titulo()
+}
+
+div.destacado {
+    @include crea-caja();
+    margin-left: 20%;
+    margin-right: 20%;
+
+    h1 {
+        @include crea-caja();
+
+        &:hover {
+            color: $color-secundario;
+        }
+    }
+
+    .textosuperespecial {
+        color: $color-secundario;
+    }
+
+
+}
+
+footer {
+    @include footerStyle();
+
+    p {
+        font-size: $fuente-pequena;
+    }
+
+    .letraPequeña {
+        font-size: tamañoExtrapequeño(2);
+    }
+
+    h1 {
+        font-size: $fuente-pequena;
+    }
+}
+
+.lista{
+    margin-left: 20%;
+    margin-right: 20%;
+    li{
+        font-size: tamañoExtragrande(1.5);
+    }
+}
+
+.tablaDatos{
+    th{
+        font-size: tamañoExtragrande(1.5);
+    }
+    td{
+        font-size: tamañoExtragrande(1.2);
+    }
+}
+
+.buttonLink{
+    background-color: lightblue;
+    border: none;
+    color: $color-primario;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+//Repetidor
+$contador: 1;
+@each $color in $colores{
+    .span#{$contador}{
+        color: $color;
+    }
+    $contador: $contador+1;
+}
+
+
